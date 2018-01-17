@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+    background-color: #95BADD;
+    font-family: 'Montserrat', sans-serif;
+    color: #21589B;
+}
+
+.question{
+    padding: 3vw;
+}
+.get-quote{
+    margin-top: 8vh;
+    background-color: #21589B;
+    color: white;
+    width: 40vw;
+    height: 10vh;
+    font-size: 1.2em;
+    border: 2px solid #A3CE90;
+}
