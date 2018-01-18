@@ -4,6 +4,7 @@ import {Switch, Route} from 'react-router-dom';
 //components to be rendered
 import Home from './Components/Home/home.js';
 import Grass from './Components/Grass/grass.js';
+import Shrub from './Components/Shrub/shrub.js';
 
 
 
@@ -12,5 +13,6 @@ export default (
     <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/question1' component={Grass}/>
+        <Route path='/question2' component={Shrub}/>
     </Switch>
 )
