@@ -9,6 +9,11 @@ import Mulch from './Components/Mulch/mulch.js';
 import Sprinkler from './Components/Irrigation/irrigation.js';
 import Inspection from './Components/Inspection/inspection.js';
 import Seasonal from './Components/SeasonalColor/seasonal.js';
+import Seeding from './Components/Seeding/seeding.js';
+import Fertilizer from './Components/Fertilizer/fertilizer.js';
+import Airation from './Components/Airation/airation.js';
+import Dethatching from './Components/Dethatching/dethatching.js';
+import Address from './Components/Address/address.js';
  
 
 
@@ -23,5 +28,10 @@ export default (
         <Route path='/question4' component={Sprinkler}/>
         <Route path='/question5' component={Inspection}/>
         <Route path='/question6' component={Seasonal}/>
+        <Route path='/question7' component={Seeding}/>
+        <Route path='/question8' component={Fertilizer}/>
+        <Route path='/question9' component={Airation}/>
+        <Route path='/question10' component={Dethatching}/>
+        <Route path='/address' component={Address}/>
     </Switch>
 )

@@ -9,6 +9,11 @@ const GET_MULCH = 'GET_MULCH';
 const GET_SPRINKLER = 'GET_SPRINKLER';
 const GET_INSPECTION = 'GET_INSPECTION';
 const GET_SEASONAL = 'GET_SEASONAL';
+const GET_SEEDING = 'GET_SEEDING';
+const GET_FERTILIZER = 'GET_FERTILIZER';
+const GET_AIRATION = 'GET_AIRATION';
+const GET_DETHATCHING = 'GET_DETHATCHING';
+
 
 const initialState = {
     squareFootage: null,
@@ -17,12 +22,12 @@ const initialState = {
     shrubType: {},
     irrigation: false,
     inspectionSchedule: '',
-    seeding: {},
-    fertilizerSeasons: null,
+    seeding: false,
+    fertilizer: null,
     seasonalColor: {},
     mulch: {},
-    airation: {},
-    dethatching: {},
+    airation: false,
+    dethatching: false,
     runningQuote: {}
 
 
@@ -54,6 +59,22 @@ export default function reducer(state = initialState, action){
         case GET_SEASONAL:
             return Object.assign({}, state, {
                 seasonalColor: action.payload
+            })
+        case GET_SEEDING:
+            return Object.assign({}, state, {
+                seeding: action.payload
+            })
+        case GET_FERTILIZER:
+            return Object.assign({}, state, {
+                fertilizer: action.payload
+            })
+        case GET_AIRATION:
+            return Object.assign({}, state, {
+                airation: action.payload
+            })
+        case GET_DETHATCHING:
+            return Object.assign({}, state, {
+                dethatching: action.payload
             })
         default:
             return state;
@@ -94,5 +115,29 @@ export function getSeasonal(seasonal){
     return {
         type: GET_SEASONAL,
         payload: seasonal
+    }
+}
+export function getSeeding(boolean){
+    return {
+        type: GET_SEEDING,
+        payload: boolean
+    }
+}
+export function getFertilizer(fertilizer){
+    return {
+        type: GET_FERTILIZER,
+        payload: fertilizer
+    }
+}
+export function getAiration(boolean){
+    return {
+        type: GET_AIRATION,
+        payload: boolean
+    }
+}
+export function getDethatching(boolean){
+    return {
+        type: GET_DETHATCHING,
+        payload: boolean
     }
 }
