@@ -1,7 +1,10 @@
+const axios = require('axios');
+require("dotenv").config();
+
 const apiKey = process.env.addressAPIkey;
+
 module.exports = {
-    Get_Footage: (req,res,next) => {
-        const dbInstance = req.app.get('db');
+    Get_Footage: (req, res, next) => {
         const {address1, address2} = req.body;
         console.log('hitter', address1, address2);
 

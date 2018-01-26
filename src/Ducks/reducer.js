@@ -13,6 +13,7 @@ const GET_SEEDING = 'GET_SEEDING';
 const GET_FERTILIZER = 'GET_FERTILIZER';
 const GET_AIRATION = 'GET_AIRATION';
 const GET_DETHATCHING = 'GET_DETHATCHING';
+const GET_FOOTAGE = 'GET_FOOTAGE';
 
 
 const initialState = {
@@ -75,6 +76,11 @@ export default function reducer(state = initialState, action){
         case GET_DETHATCHING:
             return Object.assign({}, state, {
                 dethatching: action.payload
+            })
+        case GET_FOOTAGE:
+            return Object.assign({}, state, {
+                squareFootage: action.payload,
+                address: action.payload
             })
         default:
             return state;
@@ -140,4 +146,17 @@ export function getDethatching(boolean){
         type: GET_DETHATCHING,
         payload: boolean
     }
+}
+export function getFootage(address){
+    console.log('success', address);
+    return {
+        type: GET_FOOTAGE,
+        payload: axios
+        .post(`/api/getFootage`, address)
+        .then(response => {
+            console.log(response);
+            return response.data;
+        })
+        .catch(err => err)
+    };
 }
