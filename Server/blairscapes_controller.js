@@ -8,9 +8,9 @@ module.exports = {
         const {address1, address2} = req.body;
         console.log('hitter', address1, address2);
 
-        axios.get(`https://search.onboard-apis.com/propertyapi/v1.0.0/property/detail?address1=${address1}address2=${address2}`, {headers: {Accept: 'application/json', ApplicationKey: `${apiKey}`}})
+        axios.get(`https://search.onboard-apis.com/propertyapi/v1.0.0/property/detail?address1=${address1}&address2=${address2}`, {headers: {Accept: 'application/json', apikey: `${apiKey}`}})
         .then(response => {
-            return response.data;
+            res.status(200).send(response.data);
         })
         .catch(err => err);
     }

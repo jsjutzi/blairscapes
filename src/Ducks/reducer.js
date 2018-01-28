@@ -77,7 +77,8 @@ export default function reducer(state = initialState, action){
             return Object.assign({}, state, {
                 dethatching: action.payload
             })
-        case GET_FOOTAGE:
+        case GET_FOOTAGE +'_FULFILLED':
+            console.log(action.payload);
             return Object.assign({}, state, {
                 squareFootage: action.payload,
                 address: action.payload
@@ -152,7 +153,7 @@ export function getFootage(address){
     return {
         type: GET_FOOTAGE,
         payload: axios
-        .post(`/api/getFootage`, address)
+        .post(`http://localhost:3001/api/getFootage`, address)
         .then(response => {
             console.log(response);
             return response.data;
