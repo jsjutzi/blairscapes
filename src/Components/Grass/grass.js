@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router';
-import {getGrass} from '../../Ducks/reducer.js';
+import {getGrass, getSeeding} from '../../Ducks/reducer.js';
 import Header from '../Header/header.js';
 
 import stAugustine from '../../Images/st-augustine.gif';
@@ -38,8 +38,10 @@ async handleClick(e, val){
 
 }
 handleSubmit(){
-    
     this.props.getGrass(this.state);
+    if(this.state.grassType === 'st-augustine'){
+        this.props.getSeeding(false);
+    }
 }
 
 render(){
@@ -61,4 +63,4 @@ render(){
 
 const mapStateToProps = state => state;
 
-export default withRouter(connect(mapStateToProps, {getGrass}) (Grass))
+export default withRouter(connect(mapStateToProps, {getGrass, getSeeding}) (Grass))

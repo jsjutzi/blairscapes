@@ -14,6 +14,7 @@ const GET_FERTILIZER = 'GET_FERTILIZER';
 const GET_AIRATION = 'GET_AIRATION';
 const GET_DETHATCHING = 'GET_DETHATCHING';
 const GET_FOOTAGE = 'GET_FOOTAGE';
+const GET_ADDRESS = 'GET_ADDRESS';
 
 
 const initialState = {
@@ -23,7 +24,7 @@ const initialState = {
     shrubType: {},
     irrigation: false,
     inspectionSchedule: '',
-    seeding: false,
+    seeding: null,
     fertilizer: null,
     seasonalColor: {},
     mulch: {},
@@ -77,11 +78,15 @@ export default function reducer(state = initialState, action){
             return Object.assign({}, state, {
                 dethatching: action.payload
             })
-        case GET_FOOTAGE +'_FULFILLED':
+        case GET_ADDRESS +'_FULFILLED':
             console.log(action.payload);
             return Object.assign({}, state, {
-                squareFootage: action.payload,
                 address: action.payload
+            })
+        case GET_FOOTAGE:
+            console.log(action.payload);
+            return Object.assign({}, state, {
+                squareFootage: action.payload
             })
         default:
             return state;
@@ -148,10 +153,10 @@ export function getDethatching(boolean){
         payload: boolean
     }
 }
-export function getFootage(address){
+export function getAddress(address){
     console.log('success', address);
     return {
-        type: GET_FOOTAGE,
+        type: GET_ADDRESS,
         payload: axios
         .post(`http://localhost:3001/api/getFootage`, address)
         .then(response => {
@@ -160,4 +165,11 @@ export function getFootage(address){
         })
         .catch(err => err)
     };
+}
+export function getFootage(footage){
+    console.log('footage', footage);
+    return {
+        type: GET_FOOTAGE,
+        payload: footage
+    }
 }

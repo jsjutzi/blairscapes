@@ -84,7 +84,7 @@ render(){
     return(
         <div>
         <Header/>
-            <p>If you have shrubs, which kind?</p>
+            <p>Which seasonal color would you prefer?</p>
                 <div class='content-container'>
                 <p>Begonias</p>
                     <img className="grass-pic" style={this.state.begoniaBorder}name='seasonal'src={begonias} value='begonias' onClick={(e) => {this.handleClick(e, 'begonia')}}/>

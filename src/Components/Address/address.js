@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {getFootage} from '../../Ducks/reducer.js';
+import {getFootage, getAddress} from '../../Ducks/reducer.js';
 
 import {Link, withRouter} from 'react-router-dom';
 import Header from '../Header/header.js';
@@ -18,17 +18,20 @@ class Address extends Component{
         this.state= {
             address1: null,
             address2: null,
-            response: false
+            response: false,
+            footage: null
             
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
 handleSubmit(){
-    this.props.getFootage({address1: this.state.address1, address2: this.state.address2})
+    this.props.getAddress({address1: this.state.address1, address2: this.state.address2})
     .then ((response) => {
         if(response){
         this.setState({response: true});
+        let footage = (this.props.address.property[0].lot.lotsize2 - this.props.address.property[0].building.size.livingsize);
+        this.props.getFootage(footage);
         }
 
     })
@@ -54,4 +57,4 @@ render(){
 
 const mapStateToProps = state => state;
 
-export default withRouter(connect(mapStateToProps, {getFootage}) (Address))
+export default withRouter(connect(mapStateToProps, {getFootage, getAddress}) (Address))
