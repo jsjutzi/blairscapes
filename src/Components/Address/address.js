@@ -39,6 +39,9 @@ handleSubmit(){
 
 
 render(){
+    let estimateRoute = false;
+    this.state.response ? estimateRoute = '/estimate' : false;
+
     return(
         <div>
         <Header/>
@@ -48,7 +51,7 @@ render(){
                  <input className='inputs'type='text' placeholder='street address' name='address1' onChange={e => this.setState({address1: e.target.value})}/>
                  <input className='inputs' type='text' placeholder='city, state' name='address2' onChange={e => this.setState({ address2: e.target.value})}/>
                     </div>
-                   <button className='next' type='submit' onClick={this.handleSubmit}>Next</button>
+                   <Link path={estimateRoute}><button className='next' type='submit' onClick={this.handleSubmit}>Next</button></Link>
         </div>
         
     )

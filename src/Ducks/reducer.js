@@ -18,7 +18,7 @@ const GET_ADDRESS = 'GET_ADDRESS';
 
 
 const initialState = {
-    squareFootage: null,
+    squareFootage: 1,
     address: {},
     grassType: {},
     shrubType: {},

@@ -14,6 +14,7 @@ import Fertilizer from './Components/Fertilizer/fertilizer.js';
 import Airation from './Components/Airation/airation.js';
 import Dethatching from './Components/Dethatching/dethatching.js';
 import Address from './Components/Address/address.js';
+import Estimate from './Components/FormulaEstimate/estimate.js';
  
 
 
@@ -33,5 +34,6 @@ export default (
         <Route path='/question9' component={Airation}/>
         <Route path='/question10' component={Dethatching}/>
         <Route path='/address' component={Address}/>
+        <Route path='/estimate' component={Estimate}/>
     </Switch>
 )
