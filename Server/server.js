@@ -14,11 +14,13 @@ app.use(cors());
 
 massive(process.env.CONNECTION_STRING)
     .then(dbInstance => {
-        app.set('db', dbInstance);
+        app.set("db", dbInstance);
     })
     .catch(console.log);
 
 app.post("/api/getFootage", blairscapes_controller.Get_Footage);
+app.post("/api/submitContact", blairscapes_controller.Submit_Contact);
+//app.get("/api/getContact", blairscapes_controller.Get_Contacts);
 
 app.listen(port, () =>{
     console.log(`Listening at port: ${port}`);

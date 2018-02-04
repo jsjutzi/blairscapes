@@ -1,0 +1,25 @@
+p {
+    margin-top: 8vw;
+    padding: 5vw;
+}
+h1{
+    font-size: 2.5em;
+}
+.call-to-action{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form{
+    width: 70vw;
+    margin-left: 15vw;
+    margin-bottom: 5vw;
+}
+.submit-contact{
+    width: 60vw;
+    margin-left: 20vw;
+    background: green;
+    color: white;
+    height: 40px;
+    font-size: 1.3em;
+}

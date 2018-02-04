@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 import {Link, withRouter} from 'react-router-dom';
 import Header from '../Header/header.js';
-require('./formula.js');
+require('./estimate.css');
 
 let footage = 0;
 
@@ -26,9 +27,17 @@ class Estimate extends Component{
     constructor(props){
         super(props)
         this.state={
-                estimate: 0
+                estimate: 0,
+                name: '',
+                email: '',
+                phone: '',
+                comments:'',
+                address1: this.props.address.property[0].address.line1,
+                address2: this.props.address.property[0].address.line2,
+                addressFootage: this.props.squareFootage
         }
         this.getEstimate = this.getEstimate.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 getEstimate(){
     //Get lawncare pricing based on square footage returned from API
@@ -87,11 +96,31 @@ getEstimate(){
     
 componentDidMount(){
     this.getEstimate();
-    }
+}
+handleSubmit(){
+    console.log('submission fired');
+    axios.post('/api/submitContact', this.state)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(err => err);
+}
     render(){
         return(
             <div>
                 <Header/>
+                <div className='estimate-container'>
+                    <p>Your estimated monthly cost for service</p>
+                    <h1>${this.state.estimate} /mth</h1>
+                </div>
+                <div className='call-to-action'>
+                    <p>If you would like to schedule an on-site visit with us, please enter your contact information below.  Keep in mind that while we do our best to provide accurate quotes here, there are factors we can't account for online.  An on-site visit will allow us to present you with a personalized service quote tailored to your needs.  We look forward to speaking with you!</p>
+                    <input className='form' type='text' placeholder='Name' onChange={e => this.setState({name: e.target.value})}></input>
+                    <input className='form' type='text' placeholder='email' onChange={e => this.setState({email: e.target.value})}></input>
+                    <input className='form' type='text' placeholder='phone' onChange={e => this.setState({phone: e.target.value})}></input>
+                    <input className='form' type='text' placeholder='comments' onChange={e => this.setState({comments: e.target.value})}></input>
+                    <button className='submit-contact'type='submit' onClick={e => {this.handleSubmit()}}>Submit</button>
+                </div>
             </div>
         )
     }
