@@ -98,10 +98,9 @@ componentDidMount(){
     this.getEstimate();
 }
 handleSubmit(){
-    console.log('submission fired');
     axios.post('/api/submitContact', this.state)
     .then(response => {
-        console.log(response);
+        response.status = 200 ? this.props.history.push('/thankYou') : alert('Please enter a valid address');
     })
     .catch(err => err);
 }
@@ -110,11 +109,11 @@ handleSubmit(){
             <div>
                 <Header/>
                 <div className='estimate-container'>
-                    <p>Your estimated monthly cost for service</p>
-                    <h1>${this.state.estimate} /mth</h1>
+                    <p className='blairscapes'>Your estimated monthly cost for service</p>
+                    <h1 className='estimate-header'>${this.state.estimate} /mth</h1>
                 </div>
                 <div className='call-to-action'>
-                    <p>If you would like to schedule an on-site visit with us, please enter your contact information below.  Keep in mind that while we do our best to provide accurate quotes here, there are factors we can't account for online.  An on-site visit will allow us to present you with a personalized service quote tailored to your needs.  We look forward to speaking with you!</p>
+                    <p className='blairscapes'>If you would like to schedule an on-site visit with us, please enter your contact information below.  Keep in mind that while we do our best to provide accurate quotes here, there are factors we can't account for online.  An on-site visit will allow us to present you with a personalized service quote tailored to your needs.  We look forward to speaking with you!</p>
                     <input className='form' type='text' placeholder='Name' onChange={e => this.setState({name: e.target.value})}></input>
                     <input className='form' type='text' placeholder='email' onChange={e => this.setState({email: e.target.value})}></input>
                     <input className='form' type='text' placeholder='phone' onChange={e => this.setState({phone: e.target.value})}></input>

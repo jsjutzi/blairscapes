@@ -29,9 +29,10 @@ handleSubmit(){
     this.props.getAddress({address1: this.state.address1, address2: this.state.address2})
     .then ((response) => {
         if(response){
-        this.setState({response: true});
         let footage = (this.props.address.property[0].lot.lotsize2 - this.props.address.property[0].building.size.livingsize);
         this.props.getFootage(footage);
+        this.setState({response: true});
+
         }
 
     })
@@ -39,8 +40,7 @@ handleSubmit(){
 
 
 render(){
-    let estimateRoute = false;
-    this.state.response ? estimateRoute = '/estimate' : estimateRoute = '/address';
+    this.state.response ? this.props.history.push('/estimate'): false;
 
     return(
         <div>
@@ -51,7 +51,7 @@ render(){
                  <input className='inputs'type='text' placeholder='street address' name='address1' onChange={e => this.setState({address1: e.target.value})}/>
                  <input className='inputs' type='text' placeholder='city, state' name='address2' onChange={e => this.setState({ address2: e.target.value})}/>
                     </div>
-                   <Link to={estimateRoute}><button className='next' type='submit' onClick={this.handleSubmit}>Next</button></Link>
+                <button className='next' type='submit' onClick={this.handleSubmit}>Next</button>
         </div>
         
     )

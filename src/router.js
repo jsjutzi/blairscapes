@@ -15,6 +15,8 @@ import Airation from './Components/Airation/airation.js';
 import Dethatching from './Components/Dethatching/dethatching.js';
 import Address from './Components/Address/address.js';
 import Estimate from './Components/FormulaEstimate/estimate.js';
+import ThankYou from './Components/ThankYou/thankYou.js';
+import Admin from './Components/Admin/admin.js';
  
 
 
@@ -35,5 +37,7 @@ export default (
         <Route path='/question10' component={Dethatching}/>
         <Route path='/address' component={Address}/>
         <Route path='/estimate' component={Estimate}/>
+        <Route path='/thankYou' component={ThankYou}/>
+        <Route path='/admin' component={Admin}/>
     </Switch>
 )
