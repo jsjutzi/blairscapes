@@ -7,7 +7,6 @@ const pinCode = process.env.pin;
 module.exports = {
     Get_Footage: (req, res, next) => {
         const {address1, address2} = req.body;
-        console.log('hitter');
 
         axios.get(`https://search.onboard-apis.com/propertyapi/v1.0.0/property/detail?address1=${address1}&address2=${address2}`, {headers: {Accept: 'application/json', apikey: `${apiKey}`}})
         .then(response => {
@@ -19,7 +18,6 @@ module.exports = {
     Submit_Contact: (req, res, next) => {
         const dbInstance = req.app.get("db");
         const {name, email, phone, address1, address2, comments, estimate, addressFootage} = req.body;
-        console.log('submitting info', name, email, phone, comments, estimate);
 
         dbInstance
             .Submit_Contact(name, email, phone, address1, address2, comments, estimate, addressFootage)
@@ -30,11 +28,12 @@ module.exports = {
             })
     },
 
-    Get_Contact: (req, res, next) => {
+    Get_Contacts: (req, res, next) => {
         const dbInstance = req.app.get("db");
+        console.log('getting customers');
 
         dbInstance
-            .getContacts()
+            .Get_Contacts()
             .then(estimate => {
                 res.status(200).send(estimate);
             })
@@ -45,8 +44,6 @@ module.exports = {
     },
     Login: (req, res, next) => {
         const {code} = req.body;
-        console.log('hit server', code);
-        console.log(pinCode);
         if(code == pinCode){
             res.status(200).send('Valid');
         }

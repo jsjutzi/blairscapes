@@ -55,6 +55,7 @@ getEstimate(){
     //Determine seedingMultiplier based on whether user initially selected yes or no for year-round lawncare
         this.props.seeding === true ? seedingMultiplier = 46 : seedingMultiplier = 40;
         console.log(estimate);
+        console.log('lawncare', lawncare, 'seedingMultiplier', seedingMultiplier, 'bedMaintenence', bedMaintenance);
         estimate += ((lawncare * seedingMultiplier) + bedMaintenance);
         console.log(estimate);
 
@@ -79,7 +80,7 @@ getEstimate(){
             fertCount > 0 ? fertilization *= fertCount : false;
 
         estimate += (seeding + fertilization);
-            const seasonalColor = ((footage * 0.01) * 12.5);
+            const seasonalColor = ((footage * 0.005) * 12.5);
             console.log(estimate);
         estimate += (seasonalColor * 2);
             console.log(estimate);

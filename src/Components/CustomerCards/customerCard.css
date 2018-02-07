@@ -1,0 +1,8 @@
+.customer-card{
+    text-align: center;
+    width: 90vw;
+    margin-left: 5vw;
+    border-radius: 5%;
+    background-color: lightgrey;
+    color: darkblue;
+}

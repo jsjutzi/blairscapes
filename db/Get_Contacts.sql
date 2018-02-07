@@ -1,0 +1,1 @@
+SELECT * FROM blairscapes_customers;
