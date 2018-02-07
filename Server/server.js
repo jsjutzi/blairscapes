@@ -20,6 +20,7 @@ massive(process.env.CONNECTION_STRING)
 
 app.post("/api/getFootage", blairscapes_controller.Get_Footage);
 app.post("/api/submitContact", blairscapes_controller.Submit_Contact);
+app.post('/api/login', blairscapes_controller.Login);
 //app.get("/api/getContact", blairscapes_controller.Get_Contacts);
 
 app.listen(port, () =>{

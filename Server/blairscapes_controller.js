@@ -2,6 +2,7 @@ const axios = require('axios');
 require("dotenv").config();
 
 const apiKey = process.env.addressAPIkey;
+const pinCode = process.env.pin;
 
 module.exports = {
     Get_Footage: (req, res, next) => {
@@ -41,5 +42,16 @@ module.exports = {
                 console.log(err);
                 res.status(500).send(err);
             })
+    },
+    Login: (req, res, next) => {
+        const {code} = req.body;
+        console.log('hit server', code);
+        console.log(pinCode);
+        if(code == pinCode){
+            res.status(200).send('Valid');
+        }
+        else{
+            res.status(200).send('Invalid');
+        }
     }
 }

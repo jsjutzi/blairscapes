@@ -17,6 +17,7 @@ import Address from './Components/Address/address.js';
 import Estimate from './Components/FormulaEstimate/estimate.js';
 import ThankYou from './Components/ThankYou/thankYou.js';
 import Admin from './Components/Admin/admin.js';
+import Dashboard from './Components/Dashboard/dashboard.js';
  
 
 
@@ -39,5 +40,6 @@ export default (
         <Route path='/estimate' component={Estimate}/>
         <Route path='/thankYou' component={ThankYou}/>
         <Route path='/admin' component={Admin}/>
+        <Route path='/dashboard' component={Dashboard}/>
     </Switch>
 )
