@@ -17,10 +17,10 @@ module.exports = {
 
     Submit_Contact: (req, res, next) => {
         const dbInstance = req.app.get("db");
-        const {name, email, phone, address1, address2, comments, estimate, addressFootage} = req.body;
+        const {name, email, phone, address1, address2, comments, estimate, addressFootage, irrigation, mulch, seasonalColor} = req.body;
 
         dbInstance
-            .Submit_Contact(name, email, phone, address1, address2, comments, estimate, addressFootage)
+            .Submit_Contact(name, email, phone, address1, address2, comments, estimate, addressFootage, irrigation, mulch, seasonalColor)
             .then(res.status(200).send('Contact Submitted'))
             .catch(err => {
                 console.log(err);

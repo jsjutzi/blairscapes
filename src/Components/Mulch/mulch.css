@@ -1,0 +1,10 @@
+.mulch-pic{
+    border-radius: 100%;
+    width: 30vw;
+    height: 30vw;
+    margin-left: 3vw;
+}
+.mulch-container{
+    display: flex;
+    flex-direction: row;
+}

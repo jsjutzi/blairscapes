@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body{
-    background-color: #95BADD;
+    background-color: rgb(8, 114, 214);
     font-family: 'Montserrat', sans-serif;
-    color: #21589B;
+    color: rgb(234, 238, 238);
 }
 
 .question{
@@ -11,7 +11,7 @@ body{
 }
 .get-quote{
     margin-top: 8vh;
-    background-color: #21589B;
+    background-color: rgb(33, 155, 43);
     color: white;
     width: 40vw;
     height: 10vh;

@@ -56,7 +56,7 @@ render(){
                     <img className='grass-pic' style={this.state.bermudaBorder}name='grassType'src={bermuda}  value='bermuda' onClick={(e) => {this.handleClick(e, 'bermuda')}}/>
                  <Link to='question2'>   <button className='next' type='submit' onClick={this.handleSubmit}>Next</button></Link>
                  </div>
-                 </div>
+                </div>
     )
 }
 }

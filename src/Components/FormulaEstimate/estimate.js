@@ -34,7 +34,10 @@ class Estimate extends Component{
                 comments:'',
                 address1: this.props.address.property[0].address.line1,
                 address2: this.props.address.property[0].address.line2,
-                addressFootage: this.props.squareFootage
+                addressFootage: this.props.squareFootage,
+                irrigation: this.props.irrigation,
+                mulch: this.props.mulch,
+                seasonalColor: this.props.seasonalColor
         }
         this.getEstimate = this.getEstimate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,17 +62,17 @@ getEstimate(){
         estimate += ((lawncare * seedingMultiplier) + bedMaintenance);
         console.log(estimate);
 
-            if(this.props.irrigation){
-                let count = 1;
-                this.props.inspectionSchedule === 'bi-annually' ? count = 2 : false;
-                this.props.inspectionSchedule === 'quarterly' ? count = 4 : false;
-                inspectionTrips = count;
+            // if(this.props.irrigation){
+            //     let count = 1;
+            //     this.props.inspectionSchedule === 'bi-annually' ? count = 2 : false;
+            //     this.props.inspectionSchedule === 'quarterly' ? count = 4 : false;
+            //     inspectionTrips = count;
                 
-                footage > 0 && footage <= 10000 ? valves = Math.round(footage / 750) : valves = Math.round(footage / 2000);
-                irrigation = (valves * 5.3);
-                estimate +=(inspectionTrips * irrigation);
-                console.log(estimate);
-            }
+            //     footage > 0 && footage <= 10000 ? valves = Math.round(footage / 750) : valves = Math.round(footage / 2000);
+            //     irrigation = (valves * 5.3);
+            //     estimate +=(inspectionTrips * irrigation);
+            //     console.log(estimate);
+            // }
         const seeding = (footage * 0.023);
         let fertilization = (footage * 0.02);
             let fertCount = 0;
@@ -80,20 +83,21 @@ getEstimate(){
             fertCount > 0 ? fertilization *= fertCount : false;
 
         estimate += (seeding + fertilization);
-            const seasonalColor = ((footage * 0.005) * 12.5);
+        //     const seasonalColor = ((footage * 0.005) * 12.5);
+        //     console.log(estimate);
+        // estimate += (seasonalColor * 2);
             console.log(estimate);
-        estimate += (seasonalColor * 2);
-            console.log(estimate);
-            this.props.mulch.mulchType === 'regular' ? mulch = (footage * 0.065) : mulch = (footage * 0.090);
-            let trips = seedingMultiplier + seasonalColorTrips + inspectionTrips + 1 + fertilization + 1;
-            mobilization = trips * 2.0;
+            // this.props.mulch.mulchType === 'regular' ? mulch = (footage * 0.065) : mulch = (footage * 0.090);
+            // let trips = seedingMultiplier + seasonalColorTrips + inspectionTrips + 1 + fertilization + 1;
+            // mobilization = trips * 2.0;
             const dethatching = (footage * 0.06);
-        estimate += (mulch + mobilization + dethatching);
+            estimate += dethatching;
+        //estimate += (mulch + mobilization + dethatching);
         console.log(estimate);
         estimate /= 12;
         console.log(estimate.toFixed(2));
         this.setState({estimate: estimate.toFixed(2)});
-    }
+}
     
 componentDidMount(){
     this.getEstimate();

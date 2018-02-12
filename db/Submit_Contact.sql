@@ -1,2 +1,2 @@
-INSERT INTO blairscapes_customers (customer_name, email, phone, address_1, address_2, customer_comments, estimate, squareFootage)
-VALUES ($1, $2, $3, $4, $5, $6, $7, $8);
+INSERT INTO blairscapes_customers (customer_name, email, phone, address_1, address_2, customer_comments, estimate, squareFootage, has_irrigation, mulch_wanted, seasonal_color)
+VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11);

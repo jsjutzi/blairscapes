@@ -26,8 +26,8 @@ const initialState = {
     inspectionSchedule: '',
     seeding: null,
     fertilizer: null,
-    seasonalColor: {},
-    mulch: {},
+    seasonalColor: false,
+    mulch: false,
     airation: false,
     dethatching: false,
     runningQuote: {}

@@ -50,7 +50,7 @@ render(){
                             <CheckBox
                                 checked={this.state.yesChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}
@@ -64,7 +64,7 @@ render(){
                             <CheckBox
                                 checked={this.state.noChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}

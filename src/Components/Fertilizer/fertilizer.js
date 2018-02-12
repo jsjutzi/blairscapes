@@ -46,7 +46,7 @@ render(){
                             <CheckBox
                                 checked={this.state.springChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}
@@ -60,7 +60,7 @@ render(){
                             <CheckBox
                                 checked={this.state.summerChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}
@@ -73,7 +73,7 @@ render(){
                             <CheckBox
                                 checked={this.state.fallChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}
@@ -87,7 +87,7 @@ render(){
                             <CheckBox
                                 checked={this.state.winterChecked} 
                                 checkBoxStyle={{
-                                    checkedColor: '#008000',
+                                    checkedColor: '#66f828',
                                     size: 60,
                                     unCheckedColor: '#ffffff'
                                 }}
