@@ -29,18 +29,22 @@ componentDidMount(){
     render(){
         const card = this.state.estimates.map(estimate => (
             <CustomerCard
-                key={estimate.id}
+                key={estimate.customer_id}
+                id={estimate.customer_id}
                 name={estimate.customer_name}
                 address1={estimate.address_1}
                 address2={estimate.address_2}
                 phone={estimate.phone}
                 email={estimate.email}
+                estimate={estimate.estimate}
                 />
         ));
         return(
             <div>
                 <Header/>
-                {card}
+                <div className='customer-reference'>
+                    {card}
+                </div>
             </div>
         )
     }

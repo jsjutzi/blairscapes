@@ -50,5 +50,22 @@ module.exports = {
         else{
             res.status(200).send('Invalid');
         }
+    },
+    Get_Selected_Customer: (req, res, next) => {
+        const dbInstance = req.app.get('db');
+        const {id} = req.body;
+        console.log('getting selected customer', id);
+
+        dbInstance
+            .Get_Selected_Customer(id)
+            .then(customer => {
+                console.log(customer);
+                res.status(200).send(customer);
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).send(err);
+            })
+
     }
 }

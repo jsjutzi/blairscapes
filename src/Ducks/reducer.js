@@ -15,6 +15,7 @@ const GET_AIRATION = 'GET_AIRATION';
 const GET_DETHATCHING = 'GET_DETHATCHING';
 const GET_FOOTAGE = 'GET_FOOTAGE';
 const GET_ADDRESS = 'GET_ADDRESS';
+const GET_SELECTED_CUSTOMER = 'GET_SELECTED_CUSTOMER';
 
 
 const initialState = {
@@ -30,7 +31,7 @@ const initialState = {
     mulch: false,
     airation: false,
     dethatching: false,
-    runningQuote: {}
+    selectedCustomer: {}
 
 
 
@@ -79,14 +80,17 @@ export default function reducer(state = initialState, action){
                 dethatching: action.payload
             })
         case GET_ADDRESS +'_FULFILLED':
-            console.log(action.payload);
             return Object.assign({}, state, {
                 address: action.payload
             })
         case GET_FOOTAGE:
-            console.log(action.payload);
             return Object.assign({}, state, {
                 squareFootage: action.payload
+            })
+        case GET_SELECTED_CUSTOMER + '_FULFILLED':
+            console.log(action.payload);
+            return Object.assign({}, state, {
+                selectedCustomer: action.payload
             })
         default:
             return state;
@@ -154,22 +158,31 @@ export function getDethatching(boolean){
     }
 }
 export function getAddress(address){
-    console.log('success', address);
     return {
         type: GET_ADDRESS,
         payload: axios
         .post(`http://localhost:3001/api/getFootage`, address)
         .then(response => {
-            console.log(response);
             return response.data;
         })
         .catch(err => err)
     };
 }
 export function getFootage(footage){
-    console.log('footage', footage);
     return {
         type: GET_FOOTAGE,
         payload: footage
     }
+}
+export function getSelectedCustomer(id){
+    return {
+        type: GET_SELECTED_CUSTOMER,
+        payload: axios
+        .post('http://localhost:3001/api/getSelectedCustomer', id)
+        .then(response => {
+            console.log('here it is', response.data[0]);
+            return response.data[0];
+        })
+        .catch(err => err)
+    };
 }

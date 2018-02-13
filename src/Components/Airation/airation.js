@@ -82,4 +82,4 @@ render(){
 
 const mapStateToProps = state => state;
 
-export default withRouter(connect(mapStateToProps, {getAiration}) (Airation))
+export default withRouter(connect(mapStateToProps, {getAiration}) (Airation));
