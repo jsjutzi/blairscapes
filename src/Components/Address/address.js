@@ -29,7 +29,7 @@ handleSubmit(){
     this.props.getAddress({address1: this.state.address1, address2: this.state.address2})
     .then ((response) => {
         if(response){
-        let footage = (this.props.address.property[0].lot.lotsize2 - this.props.address.property[0].building.size.livingsize);
+        let footage = (this.props.address.property[0].lot.lotsize2 - this.props.address.property[0].building.size.livingsize - this.props.address.property[0].building.parking.prkgSize);
         this.props.getFootage(footage);
         this.setState({response: true});
 

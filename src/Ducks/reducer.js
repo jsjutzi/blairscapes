@@ -166,7 +166,7 @@ export function getAddress(address){
             return response.data;
         })
         .catch(err => err)
-    };
+    }
 }
 export function getFootage(footage){
     return {
@@ -181,8 +181,8 @@ export function getSelectedCustomer(id){
         .post('http://localhost:3001/api/getSelectedCustomer', id)
         .then(response => {
             console.log('here it is', response.data[0]);
-            return response.data[0];
+            return response.data;
         })
         .catch(err => err)
-    };
+    }
 }

@@ -56,10 +56,11 @@ getEstimate(){
                 bedMaintenance = (lawncare * 0.33 * 1.76);
             }
     //Determine seedingMultiplier based on whether user initially selected yes or no for year-round lawncare
+            
         this.props.seeding === true ? seedingMultiplier = 46 : seedingMultiplier = 40;
         console.log(estimate);
         console.log('lawncare', lawncare, 'seedingMultiplier', seedingMultiplier, 'bedMaintenence', bedMaintenance);
-        estimate += ((lawncare * seedingMultiplier) + bedMaintenance);
+        estimate += ((lawncare * seedingMultiplier) + (bedMaintenance * 20));
         console.log(estimate);
 
             // if(this.props.irrigation){
@@ -73,14 +74,16 @@ getEstimate(){
             //     estimate +=(inspectionTrips * irrigation);
             //     console.log(estimate);
             // }
-        const seeding = (footage * 0.023);
+        let seeding;
+            this.props.seeding ? seeding = (footage * 0.023) : seeding = 0;
         let fertilization = (footage * 0.02);
             let fertCount = 0;
             this.props.fertilizer.fallChecked ? fertCount++ : false;
             this.props.fertilizer.winterChecked ? fertCount++ : false;
             this.props.fertilizer.springChecked ? fertCount++ : false;
             this.props.fertilizer.summerChecked ? fertCount++ : false;
-            fertCount > 0 ? fertilization *= fertCount : false;
+            fertCount > 0 ? fertilization *= fertCount : fertilization = 0;
+            
 
         estimate += (seeding + fertilization);
         //     const seasonalColor = ((footage * 0.005) * 12.5);
@@ -90,7 +93,7 @@ getEstimate(){
             // this.props.mulch.mulchType === 'regular' ? mulch = (footage * 0.065) : mulch = (footage * 0.090);
             // let trips = seedingMultiplier + seasonalColorTrips + inspectionTrips + 1 + fertilization + 1;
             // mobilization = trips * 2.0;
-            const dethatching = (footage * 0.06);
+        const dethatching = (footage * 0.06);
             estimate += dethatching;
         //estimate += (mulch + mobilization + dethatching);
         console.log(estimate);
