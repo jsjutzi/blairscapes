@@ -3,11 +3,13 @@ const {json} = require('body-parser');
 const cors = require('cors');
 const massive = require('massive');
 const blairscapes_controller = require('./blairscapes_controller.js');
+const path = require('path');
 
 require("dotenv").config();
-const port = 3001;
+const port = 80;
 const app = express();
 
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(json());
 app.use(cors());
 
@@ -24,6 +26,11 @@ app.post("/api/login", blairscapes_controller.Login);
 app.get("/api/getContacts", blairscapes_controller.Get_Contacts);
 app.post("/api/getSelectedCustomer", blairscapes_controller.Get_Selected_Customer);
 
-app.listen(port, () =>{
-    console.log(`Listening at port: ${port}`);
-})
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
+// app.listen(port, () =>{
+//     console.log(`Listening at port: ${port}`);
+// })
