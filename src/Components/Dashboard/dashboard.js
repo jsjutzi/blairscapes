@@ -32,10 +32,7 @@ componentDidMount(){
                 key={estimate.customer_id}
                 id={estimate.customer_id}
                 name={estimate.customer_name}
-                address1={estimate.address_1}
                 address2={estimate.address_2}
-                phone={estimate.phone}
-                email={estimate.email}
                 estimate={estimate.estimate}
                 />
         ));

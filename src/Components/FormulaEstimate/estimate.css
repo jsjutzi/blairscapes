@@ -1,5 +1,5 @@
 .blairscapes{
-    margin-top: 8vw;
+    margin-top: 1vw;
     padding: 5vw;
 }
 .estimate-header{
@@ -11,15 +11,49 @@
     justify-content: space-around;
 }
 .form{
-    width: 70vw;
-    margin-left: 15vw;
-    margin-bottom: 5vw;
+    width: 60vw;
+    height: 2em;
+    margin: auto;
+    margin-bottom: 2vw;
 }
 .submit-contact{
     width: 60vw;
-    margin-left: 20vw;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 2vw;
     background: green;
     color: white;
     height: 40px;
     font-size: 1.3em;
+}
+
+
+
+
+@media only screen and (max-width: 850px){
+    .blairscapes{
+        margin-top: 8vw;
+        padding: 5vw;
+    }
+    .estimate-header{
+        font-size: 2.5em;
+    }
+    .call-to-action{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .form{
+        width: 70vw;
+        margin-left: 15vw;
+        margin-bottom: 5vw;
+    }
+    .submit-contact{
+        width: 60vw;
+        margin-left: 20vw;
+        background: green;
+        color: white;
+        height: 40px;
+        font-size: 1.3em;
+    }
 }

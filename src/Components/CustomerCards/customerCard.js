@@ -18,7 +18,8 @@ class CustomerCard extends Component{
             }
 
 selectCustomer(){
-    getSelectedCustomer({id: this.state.id});
+    this.props.getSelectedCustomer({id: this.state.id});
+    this.props.history.push('/profile');
 }
 
     render(){

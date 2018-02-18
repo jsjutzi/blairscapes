@@ -2,8 +2,22 @@
     background: #66f828;
     width: 100%;
     height: 20vh;
+    max-height: 100px;
 }
-img {
+
+.logo{
+    max-width: 125px;
+    max-height: 90px;
+
+}
+
+
+
+
+
+@media only screen and (max-width: 400px){
+.logo {
     width: 35vw;
     height: 20vh;
+    }
 }

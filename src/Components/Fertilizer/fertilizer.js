@@ -47,7 +47,7 @@ render(){
                                 checked={this.state.springChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -61,7 +61,7 @@ render(){
                                 checked={this.state.summerChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -74,7 +74,7 @@ render(){
                                 checked={this.state.fallChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -88,7 +88,7 @@ render(){
                                 checked={this.state.winterChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -97,7 +97,7 @@ render(){
                                 
                         </div>
                     </div>
-                   <Link to='/question9'><button className='next' type='submit' onClick={this.handleSubmit}>Next</button></Link>
+                   <Link to='/address'><button className='next' type='submit' onClick={this.handleSubmit}>Next</button></Link>
         </div>
         
     )

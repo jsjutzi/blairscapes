@@ -55,7 +55,7 @@ render(){
                                 checked={this.state.quarterlyChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -69,7 +69,7 @@ render(){
                                 checked={this.state.biAnnuallyChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -82,7 +82,7 @@ render(){
                                 checked={this.state.yearlyChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}

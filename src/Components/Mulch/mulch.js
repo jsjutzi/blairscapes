@@ -55,7 +55,7 @@ render(){
                                 checked={this.state.yesChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}
@@ -69,7 +69,7 @@ render(){
                                 checked={this.state.noChecked} 
                                 checkBoxStyle={{
                                     checkedColor: '#66f828',
-                                    size: 60,
+                                    size: 70,
                                     unCheckedColor: '#ffffff'
                                 }}
                                 duration={400}

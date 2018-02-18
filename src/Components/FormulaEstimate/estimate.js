@@ -15,7 +15,6 @@ let seedingMultiplier = 0;
 let inspectionTrips = 0;
 let seasonalColorTrips = 2;
 let bedMaintenance = 0;
-let fertilization = (footage * 0.02).toFixed(2);
 let irrigation = (valves * 5.3);
 let mobilization = 0;
 let totalEstimate = 0;

@@ -31,7 +31,7 @@ class Grass extends Component{
     }
 async handleClick(e, val){
     await this.setState({[e.target.name]: val});
-    this.state.grassType === 'st-augustine' ? this.setState({grassValue: 1, stAugustineBorder: {border: 'solid 8px green'}, bermudaBorder: {border:'none'}}) : this.setState({grassValue: 2, bermudaBorder: {border:'solid 8px green'}, stAugustineBorder: {border: 'none'}});
+    this.state.grassType === 'st-augustine' ? this.setState({grassValue: 1, stAugustineBorder: {border: 'solid 8px #66f828'}, bermudaBorder: {border:'none'}}) : this.setState({grassValue: 2, bermudaBorder: {border:'solid 8px #66f828'}, stAugustineBorder: {border: 'none'}});
 
 
 

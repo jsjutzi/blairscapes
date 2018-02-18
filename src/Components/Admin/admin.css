@@ -1,17 +1,22 @@
+
+
 .login-container{
     display: flex;
     flex-direction: column;
 }
 .login{
     width: 40vw;
+    max-width: 300px;
+    max-height: 70px;
     height: 15vw;
-    margin-top: 5vw;
-    margin-left: 30vw;
+    margin: auto;
     background: green;
     color: white;
     font-size: 1.5em;
 }
 .code-input{
     width: 60vw;
-    margin-left: 20vw;
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 5vw;
 }

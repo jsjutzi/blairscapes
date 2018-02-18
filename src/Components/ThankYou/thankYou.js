@@ -19,7 +19,7 @@ render(){
     return(
         <div>
             <Header/>
-            <p>Thank you for your interest in becoming a Blairscapes customer!  We will reach out to you soon to schedule your on-site visit!</p>
+            <p className='thanker'>Thank you for your interest in becoming a Blairscapes customer!  We will reach out to you soon to schedule your on-site visit!</p>
         </div>
         
     )

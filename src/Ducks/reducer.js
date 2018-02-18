@@ -15,7 +15,7 @@ const GET_AIRATION = 'GET_AIRATION';
 const GET_DETHATCHING = 'GET_DETHATCHING';
 const GET_FOOTAGE = 'GET_FOOTAGE';
 const GET_ADDRESS = 'GET_ADDRESS';
-const GET_SELECTED_CUSTOMER = 'GET_SELECTED_CUSTOMER';
+const GET_CUSTOMER = 'GET_CUSTOMER';
 
 
 const initialState = {
@@ -87,7 +87,7 @@ export default function reducer(state = initialState, action){
             return Object.assign({}, state, {
                 squareFootage: action.payload
             })
-        case GET_SELECTED_CUSTOMER + '_FULFILLED':
+        case GET_CUSTOMER + '_FULFILLED':
             console.log(action.payload);
             return Object.assign({}, state, {
                 selectedCustomer: action.payload
@@ -161,7 +161,7 @@ export function getAddress(address){
     return {
         type: GET_ADDRESS,
         payload: axios
-        .post(`http://localhost:3001/api/getFootage`, address)
+        .post(`/api/getFootage`, address)
         .then(response => {
             return response.data;
         })
@@ -176,12 +176,12 @@ export function getFootage(footage){
 }
 export function getSelectedCustomer(id){
     return {
-        type: GET_SELECTED_CUSTOMER,
+        type: GET_CUSTOMER,
         payload: axios
-        .post('http://localhost:3001/api/getSelectedCustomer', id)
+        .post(`/api/getSelectedCustomer`, id)
         .then(response => {
-            console.log('here it is', response.data[0]);
-            return response.data;
+             console.log('here it is', response.data[0]);
+             return response.data[0];
         })
         .catch(err => err)
     }

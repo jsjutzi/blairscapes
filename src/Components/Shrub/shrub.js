@@ -29,9 +29,9 @@ class Shrub extends Component{
     }
 async handleClick(e, val){
     await this.setState({[e.target.name]: val});
-    this.state.shrubType === 'evergreen' ? this.setState({shrubValue: 1, evergreenBorder: {border: 'solid 8px green'}, mixedBorder: {border:'none'}, bothBorder: {border:'none'}}) : false;
-    this.state.shrubType === 'mixed' ? this.setState({shrubValue: 2, mixedBorder: {border: 'solid 8px green'}, evergreenBorder: {border:'none'}, bothBorder: {border:'none'}}) : false;
-    this.state.shrubType === 'both' ? this.setState({shrubValue: 3, bothBorder: {border: 'solid 8px green'}, mixedBorder: {border:'none'}, evergreenBorder: {border:'none'}}) : false;
+    this.state.shrubType === 'evergreen' ? this.setState({shrubValue: 1, evergreenBorder: {border: 'solid 8px #66f828'}, mixedBorder: {border:'none'}, bothBorder: {border:'none'}}) : false;
+    this.state.shrubType === 'mixed' ? this.setState({shrubValue: 2, mixedBorder: {border: 'solid 8px #66f828'}, evergreenBorder: {border:'none'}, bothBorder: {border:'none'}}) : false;
+    this.state.shrubType === 'both' ? this.setState({shrubValue: 3, bothBorder: {border: 'solid 8px #66f828'}, mixedBorder: {border:'none'}, evergreenBorder: {border:'none'}}) : false;
 }
 handleSubmit(){
     this.props.getShrub(this.state);
